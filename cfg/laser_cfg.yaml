@@ -1,0 +1,16 @@
+scan_filter_chain:
+- name: shadows
+  type: ScanShadowsFilter
+  params:
+    min_angle: 5
+    max_angle: 175
+    neighbors: 5
+    window: 2
+- name: interpolation
+  type: InterpolationFilter
+- name: range
+  type: LaserScanRangeFilter
+  params:
+    lower_threshold: 0.0
+    upper_threshold: 4.0
+

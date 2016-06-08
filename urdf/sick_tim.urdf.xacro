@@ -40,8 +40,8 @@
         <geometry>
           <mesh filename="${mesh}" />
         </geometry>
-        <material name="blue" >
-          <color rgba="0 0 1 1" />
+        <material name="gray" >
+          <color rgba="0.7 0.7 0.6 1" />
         </material>
       </visual>
       <collision>
