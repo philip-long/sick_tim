@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<launch>
+
+         <arg name="ip_1" default="10.4.100.179" />
+         <arg name="ip_2" default="10.4.100.210" />
+         <arg name="ip_3" default="10.4.100.211" />
+
+         <arg name="number_1" default="1" />
+         <arg name="number_2" default="2" />
+         <arg name="number_3" default="3" />
+
+
+	<include file="$(find sick_tim)/launch/sick_sensor_i.launch">
+          <arg name="ip" value="$(arg ip_1)"  />
+          <arg name="sensor_number" value="$(arg number_1)"  />
+	</include>
+
+	<include file="$(find sick_tim)/launch/sick_sensor_i.launch">
+          <arg name="ip" value="$(arg ip_2)"  />
+          <arg name="sensor_number" value="$(arg number_2)"  />
+	</include>
+
+	<include file="$(find sick_tim)/launch/sick_sensor_i.launch">
+          <arg name="ip" value="$(arg ip_3)"  />
+          <arg name="sensor_number" value="$(arg number_3)"  />
+	</include>
+
+
+
+</launch>

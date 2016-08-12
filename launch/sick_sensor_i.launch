@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="ip" default="10.4.100.179" />
+  <arg name="sensor_number" default="1"/> 
 
-  <node name="sick_tim551_2050001" pkg="sick_tim" type="sick_tim551_2050001" respawn="false" output="screen">
+<!-- sick_tim551_2050001-->
+  <node name="sensor_$(arg sensor_number)" pkg="sick_tim" type="sick_tim551_2050001" respawn="false" output="screen">
+ 	
+     <remap from="scan" to="scan_$(arg sensor_number)" />
+
     <!-- default values: -->
       <param name="min_ang" type="double" value="-0.872664625997" />
       <param name="max_ang" type="double" value="0.78539841633974428" />
