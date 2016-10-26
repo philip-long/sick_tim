@@ -4,8 +4,8 @@ scan_filter_chain:
   params:
     min_angle: 5
     max_angle: 175
-    neighbors: 5
-    window: 2
+    neighbors: 2
+    window: 1
 - name: interpolation
   type: InterpolationFilter
 - name: range

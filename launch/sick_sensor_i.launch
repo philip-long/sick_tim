@@ -2,6 +2,8 @@
 <launch>
   <arg name="ip" default="10.4.100.179" />
   <arg name="sensor_number" default="1"/> 
+  <arg name="min_angle" default="-0.872664625997"/>
+  <arg name="max_angle" default="0.78539841633974428"/>
 
 <!-- sick_tim551_2050001-->
   <node name="sensor_$(arg sensor_number)" pkg="sick_tim" type="sick_tim551_2050001" respawn="false" output="screen">
@@ -11,11 +13,12 @@
     <!-- default values: -->
       <param name="min_ang" type="double" value="-0.872664625997" />
       <param name="max_ang" type="double" value="0.78539841633974428" />
+      <param name="frame_id" type="str" value="laser_$(arg sensor_number)" />
+
 
     <!--
       <param name="intensity" type="bool" value="True" />
       <param name="skip" type="int" value="0" />
-      <param name="frame_id" type="str" value="laser" />
       <param name="time_offset" type="double" value="-0.001" />
       <param name="publish_datagram" type="bool" value="False" />
       <param name="subscribe_datagram" type="bool" value="false" />

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<launch>
+
+         <arg name="ip_1" default="10.4.100.179" />
+         <arg name="ip_2" default="10.4.100.210" />
+         <arg name="ip_3" default="10.4.100.211" />
+
+         <arg name="number_1" default="0" />
+         <arg name="number_2" default="1" />
+         <arg name="number_3" default="2" />
+
+         <arg name="min_angle_1" default="-0.872664625997" />
+         <arg name="min_angle_2" default="-0.872664625997" />
+         <arg name="min_angle_3" default="-0.872664625997" />
+
+         <arg name="max_angle_1" default="0.78539841633974428" />
+         <arg name="max_angle_2" default="0.78539841633974428" />
+         <arg name="max_angle_3" default="0.78539841633974428" />
+
+
+
+	<include file="$(find sick_tim)/launch/sick_sensor_i.launch">
+          <arg name="ip" value="$(arg ip_1)"  />
+          <arg name="sensor_number" value="$(arg number_1)"  />
+	  <arg name="min_angle" value="$(arg min_angle_1)"/>
+	  <arg name="max_angle" value="$(arg max_angle_1)"/>
+	</include>
+
+	<include file="$(find sick_tim)/launch/sick_sensor_i.launch">
+          <arg name="ip" value="$(arg ip_2)"  />
+          <arg name="sensor_number" value="$(arg number_2)"  />
+	  <arg name="min_angle" value="$(arg min_angle_2)"/>
+	  <arg name="max_angle" value="$(arg max_angle_2)"/>
+	</include>
+
+	<include file="$(find sick_tim)/launch/sick_sensor_i.launch">
+          <arg name="ip" value="$(arg ip_3)"  />
+          <arg name="sensor_number" value="$(arg number_3)"  />
+	  <arg name="min_angle" value="$(arg min_angle_3)"/>
+	  <arg name="max_angle" value="$(arg max_angle_3)"/>
+	</include>
+
+
+
+</launch>
